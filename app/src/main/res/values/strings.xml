@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Eat Hing</string>
+    <string name="facebook_app_id">1692819350939011</string>
+    <string name="naver_app_id">RAkLTHIcf_NWYlRUhGyR</string>
+    <string name="naver_app_secret">J_ylQWiJT6</string>
+    <string name="next">다음</string>
+    <string name="duplcation">중복확인</string>
+    <string name="nickname_reg">닉네임 등록</string>
+
+    <string name="search_hint">HINT</string>
+    <string name="search_global_description">description</string>
+    <string name="search_label">SEARCH</string>
+
+</resources>

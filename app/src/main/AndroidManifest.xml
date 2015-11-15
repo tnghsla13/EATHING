@@ -1,0 +1,93 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="company.kr.sand">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="company.kr.sand.controller.AppController"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+
+        <!-- 검색을 위한 meta data-->
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".app.Search" />
+
+        <!--facebook에 등록되어 있는 앱인지 식별 ID-->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <!--GridView에서 Item 클릭시 보여지는 화면-->
+        <activity android:name=".rsibal.GridImageActivity" />
+
+        <!--화면상단의 Search바-->
+        <activity android:name="company.kr.sand.rsibal.Search">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.SEARCH" />
+
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+        </activity>
+
+        <!--홈피드화면-->
+        <activity
+            android:name="company.kr.sand.rsibal.MainActivity"
+            android:label="@string/app_name">
+        </activity>
+
+
+        <!--페이스북 로그인 화면-->
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+
+        <!--인트로 화면-->
+        <activity
+            android:name=".registration.IntroActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+
+        <!--로그인 화면-->
+        <activity
+            android:name=".registration.LoginActivity"
+            android:launchMode="standard"
+            android:noHistory="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!--삭제 예정-->
+        <activity
+            android:name=".registration.SNSActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+
+        <!-- 네이버 로그인 화면 -->
+        <activity
+            android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.nhn.android.naverlogin.ui.OAuthLoginInAppBrowserActivity"
+            android:label="OAuth2.0 In-app" />
+
+    </application>
+
+</manifest>
